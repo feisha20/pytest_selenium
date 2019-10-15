@@ -16,8 +16,10 @@ def clear(element):
 def type(element, text):
     check.wait_element(element)
     if isinstance(element, str):
+        find.element(element).clear()
         find.element(element).send_keys(text)
     else:
+        element.clear()
         element.send_keys(text)
 
 

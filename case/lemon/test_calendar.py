@@ -10,8 +10,8 @@ import time
 @pytest.fixture(scope="module")
 def setup():
     login_page.login("admin", "Aa123456", "999999")
-    # yield
-    # browser.stop()
+    yield
+    browser.stop()
 
 
 @pytest.fixture(scope="function")
@@ -35,11 +35,12 @@ def test_add_calendar(addr, desc, setup, setup_function):
 @pytest.mark.parametrize("addr", ["香港"])
 def test_del_calendar(addr, setup, setup_function):
     num = calendar_page.search_by_addr(addr)
-    time.sleep(2)
-    print("删除前查询到数据" + num)
+    time.sleep(1)
+    print("删除前查询到数据" + addr + num)
     calendar_page.del_calendar()
+    time.sleep(1)
     num2 = calendar_page.get_list_num()
-    print("删除后查询到数据" + num2)
+    print("删除后查询到数据" + addr + num2)
 
 
 if __name__ == '__main__':
