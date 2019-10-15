@@ -50,6 +50,7 @@ def search_by_addr(addr):
 
 
 def del_calendar():
+    """删除节假日"""
     if check.wait_element(Calendar.list_del_btn):
         oper.click(Calendar.list_del_btn)
         oper.click(Calendar.comfirm_btn)
@@ -58,5 +59,6 @@ def del_calendar():
 
 
 def get_list_num():
+    """获取列表条数"""
     num = oper.get_text(Calendar.list_nums_text)
     return num
