@@ -9,7 +9,7 @@ project_folder = os.getcwd()[0:os.getcwd().find("pytest_selenium")]
 
 sys.path.append(project_folder + "pytest_selenium")
 sys.path.append(project_folder + "pytest_selenium//util")
-sys.path.append(project_folder + "pytest_selenium//action")
+sys.path.append(project_folder + "pytest_selenium//page")
 
 
 @pytest.mark.hookwrapper
