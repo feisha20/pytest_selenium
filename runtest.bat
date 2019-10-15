@@ -1,0 +1,1 @@
+py.test -v -s -m "smoke" --html=./report/report.html

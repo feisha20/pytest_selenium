@@ -1,0 +1,11 @@
+linux_browserdriver_path:
+  chrome_driver_path_linux: "/usr/local/bin/chromedriver"
+  firefox_driver_path_linux: "/usr/local/bin/geckodriver"
+
+database:
+  host: "infra.mysql.topideal.work"
+  port: "3306"
+  user: "pyselenium"
+  password: "cfBQP4dgXM1k0Or5ho"
+  db: "pyselenium"
+

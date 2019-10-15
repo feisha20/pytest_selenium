@@ -1,0 +1,1 @@
+/usr/local/python3/lib/python3.6/site-packages/pytest.py -v ./myproject/testcase/baidu/test_search.py --html=./report/report.html
