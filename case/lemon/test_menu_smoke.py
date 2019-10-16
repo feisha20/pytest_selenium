@@ -15,6 +15,7 @@ def setup():
     browser.stop()
 
 
+# 遍历系统所有菜单
 def test_menu(setup):
     menu_list = get.get_test_data("menu.yaml")
     menu = list(menu_list.keys())

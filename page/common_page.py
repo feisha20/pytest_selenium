@@ -9,7 +9,7 @@ class List:
     list_num = "x, /html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]//*/ul[1]/li[1]"
 
 class load:
-    loading = "x, //span[@class='ant-spin-dot']"
+    loading = "x, //span[@class='ant-spin-dot']"  # loading图标
 
 
 def table(row, col):
@@ -25,5 +25,7 @@ def table_num():
     num = int(num_text.split(" ")[1])
     return num
 
+
 def is_loading():
+    """判断页面是否加载中"""
     check.wait_element_disappear(load.loading)
