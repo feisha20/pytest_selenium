@@ -1,22 +1,22 @@
 # -*- coding=UTF-8 -*-
 import oper
-import check
-
-class Menu:
-    """顶部导航菜单"""
-    m_base = "l, 基础资料"
-    m_risk = "l, 风险管理"
 
 
-class Item:
-    """侧边栏菜单"""
-    i_calendar = "x, //*[@id='root']/div/div/aside/div/ul/li[1]/a"  # 日历管理
-    i_enterprise = "x, //*[@id='root']/div/div/aside/div/ul/li[2]/a"  # 企业管理
+def goto_page(menu, item):
+    """通过菜单名称打开相应的页面"""
+    menu_xpath = "l," + str(menu)
+    item_xpath = "l," + str(item)
+    oper.click(menu_xpath)
+    oper.click(item_xpath)
 
 
-def goto_calendar_page():
-    """进入日历管理页面"""
-    check.wait_element(Menu.m_base)
-    oper.click(Menu.m_base)
-    oper.click(Item.i_calendar)
+def click_menu(menu):
+    """点击顶部菜单"""
+    menu_xpath = "l," + str(menu)
+    oper.click(menu_xpath)
 
+
+def click_item(item):
+    """点击侧边菜单"""
+    item_xpath = "l," + str(item)
+    oper.click(item_xpath)

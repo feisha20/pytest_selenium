@@ -45,8 +45,6 @@ def search_by_addr(addr):
     """根据地区搜索"""
     oper.type(Calendar.search_addr_input, addr)
     oper.click(Calendar.search_btn)
-    result = oper.get_text(Calendar.list_nums_text)
-    return result
 
 
 def del_calendar():

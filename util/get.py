@@ -16,3 +16,10 @@ def get_conf():
     conf_file = settings.config_path + "conf.yaml"
     data = get_yaml_data(conf_file)
     return data
+
+
+def get_test_data(datafile):
+    """获取测试数据"""
+    data_file_path = settings.data_path + datafile
+    data = get_yaml_data(data_file_path)
+    return data

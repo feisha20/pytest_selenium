@@ -1,6 +1,8 @@
+# -*- coding=UTF-8 -*-
 from page import login_page
 from page import home_page
 from page import calendar_page
+from page import common_page
 import browser
 import pytest
 import sys
@@ -24,23 +26,35 @@ def setup_function():
 @pytest.mark.parametrize("addr", ["香港", "澳门"])
 @pytest.mark.parametrize("desc", ["这是节假日描述"])
 def test_add_calendar(addr, desc, setup, setup_function):
-    home_page.goto_calendar_page()
+    home_page.goto_page("基础资料", "日历管理")
     calendar_page.tab12()
     calendar_page.add_page()
     time.sleep(2)
     calendar_page.save_calendar(addr, desc)
 
 
+def test_get_list_data(setup, setup_function):
+    time.sleep(3)
+    data = []
+    for i in range(2,7):
+        data_cell = common_page.table(1, i)
+        data.append(data_cell)
+    nums = common_page.table_num()
+    print("第一行数据：" + str(data))
+    print("列表数据总数为：" + str(nums))
+
+
 # 删除节假日
 @pytest.mark.parametrize("addr", ["香港"])
 def test_del_calendar(addr, setup, setup_function):
-    num = calendar_page.search_by_addr(addr)
+    calendar_page.search_by_addr(addr)
+    num = common_page.table_num()
     time.sleep(1)
-    print("删除前查询到数据" + addr + num)
+    print("删除前查询到数据" + addr + str(num))
     calendar_page.del_calendar()
     time.sleep(1)
-    num2 = calendar_page.get_list_num()
-    print("删除后查询到数据" + addr + num2)
+    num2 = common_page.table_num()
+    print("删除后查询到数据" + addr + str(num2))
 
 
 if __name__ == '__main__':
