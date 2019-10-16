@@ -11,6 +11,6 @@ pip install openpyxl
 pip install xlutils
 pip install pytest-timeout
 pip install pymysql
-pip install yaml
+pip install pyyaml
 pause
 
