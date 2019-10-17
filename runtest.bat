@@ -1,1 +1,1 @@
-py.test -v -s -m "smoke" --html=./report/report.html
+py.test ./case/lemon/test_calendar.py  --html=./report/report.html
