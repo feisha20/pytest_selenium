@@ -43,7 +43,7 @@ def capture_screenshot():
 
 
 def pytest_configure(config):
-    # 添加接口地址与项目名称
+    # 添加项目地址与项目名称
     config._metadata["项目名称"] = "Pytest自动化项目"
     config._metadata['项目地址'] = 'http://aatp.topideal.work'
     # 删除没有必要的环境变量
